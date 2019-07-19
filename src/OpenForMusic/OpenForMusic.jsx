@@ -10,7 +10,7 @@ class OpenForMusic extends Component {
                 </div>
                 <div className='flex-container'>
                     
-                    <div>
+                    <div className='description'>
                         <p>Visit us for 1920's ambiance, classic cocktails, shared plates and live music 7 nights a week. </p>
                         <p>We are excited to show you how we’ve restored our building to resemble the look and feel of the classic 1920’s.</p>
                         <p>Our menu is designed to create a sense of community between friends, family and neighbors. 
