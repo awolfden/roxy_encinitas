@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.4a312f2b.chunk.css",
+    "main.js": "/static/js/main.4ffce612.chunk.js",
+    "main.js.map": "/static/js/main.4ffce612.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
+    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
+    "static/css/2.48adc591.chunk.css": "/static/css/2.48adc591.chunk.css",
+    "static/js/2.69070adf.chunk.js": "/static/js/2.69070adf.chunk.js",
+    "static/js/2.69070adf.chunk.js.map": "/static/js/2.69070adf.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.b440ef3ca0a04eb9d0ccb7ac8c380f1b.js": "/precache-manifest.b440ef3ca0a04eb9d0ccb7ac8c380f1b.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.48adc591.chunk.css.map": "/static/css/2.48adc591.chunk.css.map",
+    "static/css/main.4a312f2b.chunk.css.map": "/static/css/main.4a312f2b.chunk.css.map",
+    "static/media/App.css": "/static/media/wood_texture.8b664c63.jpg",
+    "static/media/contact-roxy-logo.png": "/static/media/contact-roxy-logo.7a86ad60.png",
+    "static/media/gramophone_logo_white.png": "/static/media/gramophone_logo_white.cf59c5b7.png",
+    "static/media/menu-roxy-logo.png": "/static/media/menu-roxy-logo.798d9012.png",
+    "static/media/openformusic.png": "/static/media/openformusic.05a36bd7.png",
+    "static/media/roxy_giftcard.jpg": "/static/media/roxy_giftcard.5a8061f9.jpg",
+    "static/media/shop_roxy.png": "/static/media/shop_roxy.be7f2d48.png"
+  }
+}
