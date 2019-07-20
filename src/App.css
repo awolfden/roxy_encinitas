@@ -120,21 +120,21 @@
   background-color: gray;
 }
 
-#drinks, #brunch, #smallPlates {
+#drinks, #brunch, #smallPlates, #dinner {
   padding-bottom: 100px;
 }
-#drinks h3, #brunch h3, #smallPlates h3 {
+#drinks h3, #brunch h3, #smallPlates h3, #dinner h3 {
   text-align: center;
   background-color: rgba(0, 0, 0, 0.048);
 }
-#drinks .cocktailList, #drinks .brunchList, #drinks .plateList, #brunch .cocktailList, #brunch .brunchList, #brunch .plateList, #smallPlates .cocktailList, #smallPlates .brunchList, #smallPlates .plateList {
+#drinks .cocktailList, #drinks .brunchList, #drinks .plateList, #drinks .dinnerList, #brunch .cocktailList, #brunch .brunchList, #brunch .plateList, #brunch .dinnerList, #smallPlates .cocktailList, #smallPlates .brunchList, #smallPlates .plateList, #smallPlates .dinnerList, #dinner .cocktailList, #dinner .brunchList, #dinner .plateList, #dinner .dinnerList {
   margin: auto 250px;
 }
-#drinks p, #brunch p, #smallPlates p {
+#drinks p, #brunch p, #smallPlates p, #dinner p {
   font-size: 22px;
   margin-bottom: -5px;
 }
-#drinks span, #brunch span, #smallPlates span {
+#drinks span, #brunch span, #smallPlates span, #dinner span {
   font-size: 13px;
   color: gray;
   font-style: italic;
@@ -342,6 +342,10 @@ div.rbc-event {
   div.eventEventDiv {
     position: relative;
     bottom: 600px !important;
+  }
+
+  #shop .checkout-state {
+    width: 30% !important;
   }
 }
 @media only screen and (max-width: 360px) {

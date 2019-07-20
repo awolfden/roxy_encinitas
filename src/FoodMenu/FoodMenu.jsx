@@ -4,10 +4,10 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Drinks from './Drinks/Drinks';
-import SmallPlates from './SmallPlates/SmallPlates';
+import Lunch from './Lunch/Lunch';
 import Brunch from './Brunch/Brunch';
 import menuRoxy from '../images/menu-roxy-logo.png';
-
+import Dinner from './Dinner/Dinner';
 
 
 
@@ -38,9 +38,13 @@ export default function CenteredTabs() {
             )
         } else if(tab === 3){
             return(
-                <SmallPlates/>
+                <Lunch/>
             )
-        }
+        } else if(tab === 4){
+          return(
+              <Dinner/>
+          )
+      }
     }
    
   return (
@@ -58,7 +62,8 @@ export default function CenteredTabs() {
             >
                 <Tab onClick={() => setTab(1)} label="Cocktails" />
                 <Tab onClick={() => setTab(2)} label="Brunch" />
-                <Tab onClick={() => setTab(3)} label="Small Plates" />
+                <Tab onClick={() => setTab(3)} label="Lunch" />
+                <Tab onClick={() => setTab(4)} label="Dinner" />
             </Tabs>
         </Paper>
         {<h1>{showTab()}</h1>}

@@ -31,6 +31,12 @@ class Drinks extends Component {
                  'description': 'Myers Platinum White rum, fresh mint, lime juice'},
                 {'name': 'Kitchen Round',
                  'description': 'Buy the kitchen staff a drink of their choice'}
+            ],
+            happyHour: [
+                {'name': '$2.00 OFF',
+                 'description': 'Draft Beer, Well Cocktails, Craft Cocktails, Bonterra Chardonnay and Cabernet'},
+                {'name': 'Small Plates',
+                 'description': 'Available from our Lunch Menu'},
             ]
         }
     }
@@ -47,10 +53,27 @@ class Drinks extends Component {
                     </div>
                 )
             })
+
+        const showHappyHour = 
+            this.state.happyHour.map((item, index) => {
+                return(
+                    <div key={index}>
+                        <p>{item.name}</p>
+                        <span>{item.description}</span>
+                    </div>
+                )
+            })
         
 
         return(
             <div id="drinks">
+                
+                <h3>Happy Hour</h3>
+                <div className="cocktailList">
+                    <span className="happyDetails">Monday 11a-11p | Tuesday-Friday 3p-6p</span>
+                    {showHappyHour}
+                </div>
+
                 <h3>Cocktails</h3>
                 <div className="cocktailList">
                     {showDrinks}
