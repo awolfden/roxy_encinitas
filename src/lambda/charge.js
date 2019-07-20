@@ -1,4 +1,4 @@
-const stripe = require('stripe')('sk_test_D2I8IZYgiyDs3zoiMSSgcZYS00pp8KxsaY'); // add your secret key here
+const stripe = require('stripe')(Stripe_Key); // add your secret key here
 
 exports.handler = (event, context, callback) => {
   // Only allow POST
