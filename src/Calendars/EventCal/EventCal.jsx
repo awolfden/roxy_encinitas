@@ -43,7 +43,7 @@ class EventCal extends Component {
   
   getEvents = async () => {
     try {
-      const response = await fetch("https://www.googleapis.com/calendar/v3/calendars/broadwayroxy.com_0sgiv5ufjs7doheqr6kp0012r0@group.calendar.google.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg");
+      const response = await fetch("https://www.googleapis.com/calendar/v3/calendars/roxyencinitas.com_oi1roorif24vbbp8u649eaervs@group.calendar.google.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg");
       if(response.status !== 200){
         throw(Error(response.statusText));
       }
