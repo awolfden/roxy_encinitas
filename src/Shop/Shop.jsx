@@ -92,7 +92,7 @@ export default function App() {
         </div>
         <Cart itemsInCart={itemsInCart} totalCost={totalCost} remove={handleRemoveFromCart}/>
         {itemsInCart.length > 0 && (
-        <StripeProvider apiKey="pk_test_sRKoW6QEQ6KG9lTUr0PUO88m00oAuLK0on">
+        <StripeProvider apiKey="pk_live_aoLFcNRL16XnqmLZX0U6TTKS">
             <Elements>
             <CheckoutForm totalCost={totalCost} metaData={metaData}/>
             </Elements>
