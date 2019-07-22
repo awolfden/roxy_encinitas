@@ -312,7 +312,7 @@ div.rbc-event {
     margin: 0px;
   }
 
-  #drinks .cocktailList, #drinks .plateList, #drinks .brunchList, #brunch .cocktailList, #brunch .plateList, #brunch .brunchList, #smallPlates .cocktailList, #smallPlates .plateList, #smallPlates .brunchList {
+  #drinks .cocktailList, #drinks .plateList, #drinks .brunchList, #drinks .dinnerList, #brunch .cocktailList, #brunch .plateList, #brunch .brunchList, #brunch .dinnerList, #smallPlates .cocktailList, #smallPlates .plateList, #smallPlates .brunchList, #smallPlates .dinnerList, #dinner .cocktailList, #dinner .plateList, #dinner .brunchList, #dinner .dinnerList {
     margin: auto 30px;
   }
 
