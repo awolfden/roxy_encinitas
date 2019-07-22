@@ -621,6 +621,20 @@ div.rbc-event {
   }
 }
 
+#insta .App-header {
+  background-color: #212121;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+#insta img {
+  height: 60%;
+}
+
 #instagramFeed {
   display: flex;
   justify-content: center;

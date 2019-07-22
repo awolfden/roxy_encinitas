@@ -32,6 +32,7 @@ export default function SimpleMenu() {
         <MenuItem onClick={handleClose}><a href="#menu" style={{ textDecoration: 'none', color: 'black' }}>Menu</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#shop" style={{ textDecoration: 'none', color: 'black' }}>Shop</a></MenuItem>
+        <MenuItem onClick={handleClose}><a href="#insta" style={{ textDecoration: 'none', color: 'black' }}>Instagram</a></MenuItem>
       </Menu>
     </div>
   );

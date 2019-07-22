@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import instaRoxy from '../images/insta-roxy-logo.png';
 
 
 class InstagramFeed extends Component {
@@ -21,10 +21,10 @@ class InstagramFeed extends Component {
             throw(Error(response.statusText));
           }
           const parsedResponse = await response.json();
-          console.log(parsedResponse, "insta PR");
+          //console.log(parsedResponse, "insta PR");
     
           const postsArray = parsedResponse.data.map((post) => {
-            console.log(post);
+            //console.log(post);
             return {
                 id: post.id,
                 img: post.images.standard_resolution.url,
@@ -34,7 +34,7 @@ class InstagramFeed extends Component {
             
           });
     
-          console.log(postsArray, "posts array");
+          //console.log(postsArray, "posts array");
           this.setState({
             instaPosts: postsArray
           })
@@ -57,12 +57,17 @@ class InstagramFeed extends Component {
                     </div>
                 )
             }) : null;
-        console.log(showPosts, "showposts");
+        
         
 
         return(
-            <div id="instagramFeed">
-                {this.state.instaPosts ? showPosts : null}
+            <div id="insta">
+                <header className="App-header">
+                    <img src={instaRoxy} className="shop-logo" alt="logo" />
+                </header>
+                <div id="instagramFeed">
+                    {this.state.instaPosts ? showPosts : null}
+                </div>
             </div>
         )
     }
