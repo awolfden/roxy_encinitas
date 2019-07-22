@@ -621,6 +621,22 @@ div.rbc-event {
   }
 }
 
+#instagramFeed {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#instagramFeed div.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+#instagramFeed img {
+  width: 350px;
+  height: 350px;
+  padding: 5px;
+}
+
 * {
   font-family: "Lato", sans-serif !important;
 }

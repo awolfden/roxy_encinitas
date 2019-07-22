@@ -1,0 +1,18 @@
+#instagramFeed {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    div.posts {
+        
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    img {
+        width: 350px;
+        height: 350px;
+        padding: 5px;
+    }
+}

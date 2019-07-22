@@ -8,6 +8,7 @@ import FoodMenu from './FoodMenu/FoodMenu';
 import Contact from './Contact/Contact';
 import Shop from './Shop/Shop';
 import Loader from './Loader/Loader';
+import InstagramFeed from './InstagramFeed/InstagramFeed';
 
 
 
@@ -42,6 +43,7 @@ class App extends Component {
          {this.state.showLoader ? null : <FoodMenu/>}
          {this.state.showLoader ? null : <Contact/>}
          {this.state.showLoader ? null : <Shop/>}
+         {this.state.showLoader ? null : <InstagramFeed/>}
 
   
       </div>
