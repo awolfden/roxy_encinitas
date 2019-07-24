@@ -65,6 +65,20 @@
         border-radius: 10px;
         opacity: 0.95;
     }
+
+    button {
+        border-radius: 5px;
+        border: 2px solid rgba(0, 0, 0, 0.384);
+        margin-top: 20px;
+        padding: 5px;
+        width: 60%;
+        font-size: 14px;
+    }
+
+    button:hover {
+        border: 2px solid #212121;
+        background-color: rgb(224, 224, 221);
+    }
     
    
 }
