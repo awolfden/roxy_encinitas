@@ -22,7 +22,7 @@ class Contact extends Component {
                 },
                 {
                     city: 'Roxy on Broadway',
-                    website: 'broadwayroxy.com',
+                    website: 'http://broadwayroxy.com',
                     address1: '554 S Broadway',
                     address2: 'Denver, CO 80209',
                     phone: '720.456.7041',
