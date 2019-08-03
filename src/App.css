@@ -280,7 +280,7 @@ div.rbc-event {
     height: 500px;
   }
   #calendars div.App.calendar:nth-child(2) div.rbc-calendar {
-    height: 300px !important;
+    height: 420px !important;
   }
 }
 @media only screen and (max-width: 411px) {
@@ -291,7 +291,7 @@ div.rbc-event {
     height: 700px;
   }
   #calendars div.rbc-calendar {
-    height: 300px !important;
+    height: 420px !important;
   }
   #calendars div.rbc-month-view {
     height: 385px;
