@@ -55,9 +55,9 @@ class MusicCal extends Component {
         }
         
         let dateStart = event.start.dateTime ? this.convertDate(event.start.dateTime).toISOString() : console.log(event);        
-        //console.log(dateStart);
-        let dateEnd = this.convertDate(event.end.dateTime).toISOString();
-        //console.log(dateEnd);
+        //console.log(dateStart, 'start');
+        //let dateEnd = this.convertDate(event.end.dateTime).toISOString();
+        //console.log(dateEnd, 'end');
 
         if (event.start.dateTime){
           
@@ -65,7 +65,7 @@ class MusicCal extends Component {
             {
               "title": event.summary,
               "start": dateStart,
-              "end": dateEnd,
+              "end": dateStart,
               "description" : event.description,
               "allDay?": false,
               "resource?": null
@@ -89,7 +89,7 @@ class MusicCal extends Component {
         }
       });
 
-      //console.log(eventsArray);
+      console.log(eventsArray);
       this.setState({
         cal_events: eventsArray
       })

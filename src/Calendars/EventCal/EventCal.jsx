@@ -55,7 +55,7 @@ class EventCal extends Component {
           return null;
         }
 
-        //console.log(event);
+        console.log(event);
         if (event.start.dateTime){
           let dateStart = event.start.dateTime ? this.convertDate(event.start.dateTime) : this.convertDate(event.start.date);
           let dateEnd = event.end.dateTime ? this.convertDate(event.end.dateTime) : this.convertDate(event.end.date);
