@@ -145,6 +145,7 @@ class MusicCal extends Component {
               onSelectEvent={(e) => {
                 this.showEvent(e);
               }}
+              popup={{default: false}}
             />
           </div>
         </div>

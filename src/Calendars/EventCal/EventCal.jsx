@@ -134,6 +134,7 @@ class EventCal extends Component {
               onSelectEvent={(e) => {
                 this.showEvent(e);
               }}
+              popup={{default: false}}
             />
           </div>
         </div>
