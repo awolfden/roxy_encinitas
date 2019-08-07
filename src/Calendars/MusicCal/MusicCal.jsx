@@ -146,6 +146,7 @@ class MusicCal extends Component {
                 this.showEvent(e);
               }}
               popup={{default: false}}
+              truncateEvents={false}
             />
           </div>
         </div>
