@@ -30,7 +30,7 @@ export default function CenteredTabs() {
     
         if(tab === 1){
             return(
-                <Drinks/>
+                <Dinner/>
             )
         } else if(tab === 2){
             return(
@@ -42,7 +42,7 @@ export default function CenteredTabs() {
             )
         } else if(tab === 4){
           return(
-              <Dinner/>
+              <Drinks/>
           )
       }
     }
@@ -60,10 +60,10 @@ export default function CenteredTabs() {
                 textColor="primary"
                 centered
             >
-                <Tab onClick={() => setTab(1)} label="Cocktails" />
+                <Tab onClick={() => setTab(1)} label="Dinner" />
                 <Tab onClick={() => setTab(2)} label="Brunch" />
                 <Tab onClick={() => setTab(3)} label="Lunch" />
-                <Tab onClick={() => setTab(4)} label="Dinner" />
+                <Tab onClick={() => setTab(4)} label="Drinks" />
             </Tabs>
         </Paper>
         {<h1>{showTab()}</h1>}
