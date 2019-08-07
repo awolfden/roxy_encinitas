@@ -6,7 +6,7 @@ class OpenForMusic extends Component {
         return(
             <div id="openForMusic">
                 <div className='flex-container image'>
-                    <img src={require('../images/openformusic.png')} alt="open"/>
+                    <img src={require('../images/roxy_blocks.png')} alt="open"/>
                 </div>
                 <div className='flex-container'>
                     
