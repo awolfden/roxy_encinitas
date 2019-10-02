@@ -6,34 +6,32 @@ class Lunch extends Component {
         super();
         this.state = {
             smallPlates: [
-                {'name': 'Falafel Balls',
-                 'description': 'House made tahini dressing'},
-                {'name': 'Baked Brie',
-                 'description': 'Lavender honey, toasted walnuts, baguette'},
+                {'name': 'Stems & Flappers',
+                 'description': 'House made buffalo sauce or salt and pepper seasoning, choice of blue cheese or ranch'},
                 {'name': 'Avacado Toast',
-                 'description': 'Sourdough toast, avacado slices, roasted tomato'},
-                {'name': 'French Onion Soup',
-                 'description': 'House made French onion soup, gruyere cheese, sourdough toast'},
+                 'description': 'Burrata cheese, roasted tomato, sourdough, add egg 1'},
                 {'name': 'Garlic Fries',
                  'description': 'Parmesan, parsley, garlic aioli'},
-                {'name': 'Stems & Flappers',
-                 'description': 'Chicken wings, house-made buffalo sauce or salt and pepper seasoning, ranch or blue cheese'},
+                {'name': 'Baked Brie',
+                 'description': 'Lavender honey, walnuts, organic red grapes, baguette'},
+                {'name': 'Falafel Balls',
+                 'description': 'House made tahini dressing'},
                 {'name': 'Cheese Curds',
-                 'description': 'Breaded and fried Wisconsin cheese curds, ranch or marinera'}
+                 'description': 'Breaded and fried Wisconsin cheese curds, served with ranch or marinera'}
             ],
             salads: [
                 {'name': 'Add to any salad:',
                  'description': 'chicken breast, shrimp, falafel, salmon'},
-                {'name': 'Harvest Salad',
-                 'description': 'Goat cheese, organic baby greens, candied pecans, local apple, dried apricots, red wine vinaigrette'},
-                {'name': 'Grilled Romaine Caesar',
-                 'description': 'Pecorino cheese, organic baby romaine heart, garlic ciabatta croutons, house-made caesar dressing'},
-                {'name': 'Caprese',
-                 'description': 'Mozzarella, local heirloom tomato, basil, baker & olive balsamic and olive oil'},
+                {'name': 'Tossed Cobb Salad',
+                'description': 'Blue cheese, organic romaine heart, tomato, avocado, onion, bacon, hard boiled egg, house made ranch'},
                 {'name': 'Roxy Chef Salad',
-                 'description': 'White cheddar, romaine, tomato, artichoke hearts, carrots, sprouts, avocado, tahini dressing'},
+                'description': 'White cheddar, romaine, tomato, artichoke hearts, carrots, sprouts, avocado, lemon-oregano dressing'},
+                {'name': 'Harvest Salad',
+                'description': 'Goat cheese, organic baby greens, candied pecans, local apple, dried apricots, red wine vinaigrette'},
                 {'name': 'Kale-fornia Salad',
-                 'description': 'Crispy Chickpeas, roasted fennel, parm cheese, golden raisins, roasted garlic dressing'}
+                 'description': 'Parmesan cheese, organic kale, crispy chickpeas, roasted fennel, golden raisins, roasted garlic vinaigrette'},
+                {'name': 'Grilled Romaine Caesar',
+                 'description': 'Pecorino cheese, organic baby romaine heart, garlic ciabatta croutons, house-made caesar dressing'}                
             ],
             sandwiches: [
                 {'name': 'All Sandwiches',
@@ -56,7 +54,28 @@ class Lunch extends Component {
                  'description': 'Parmesan, mozzarella, house-made marinara, panko crusted breast, ciabatta'},
                 {'name': 'Bigeye & Yellowtail Tuna Salad',
                  'description': 'Local caught big eye & yellowtail, mayo, celery, shallots, gherkins, artisan white'},
-                
+            ],
+            sunsetMenu: [
+                {'name': 'Stems & Flappers',
+                 'description': 'House made buffalo sauce or salt and pepper seasoning'},
+                {'name': 'Crispy Brussels',
+                 'description': 'Bacon lardon, pecorino cheese, baker & olive 18 year aged balsamic'},                
+                {'name': 'Baked Brie',
+                 'description': 'Lavender honey, walnuts, organic red grapes, baguette'},
+                {'name': 'Falafel Balls',
+                 'description': 'House made tahini dressing'},
+                {'name': 'Cheese Curds',
+                 'description': 'Breaded and fried Wisconsin cheese curds, served with ranch or marinera'},
+                 {'name': 'Garlic Fries',
+                 'description': 'Parmesan, parsley, garlic aioli'},
+                 {'name': 'The Roxy Burger',
+                 'description': 'white cheddar, dill pickle, onion bacon aioli, lettuce, onion, tomato, brioche bun'},
+                 {'name': 'Falafel Burger',
+                 'description': 'Melted mozzarella & cheddar, tahini dressing, onion, tomato, sprouts, 7 grain bun, add avocado 1.5'},
+                 {'name': 'Kale-fornia Salad',
+                 'description': 'Parmesan cheese, organic kale, crispy chickpeas, roasted fennel, golden raisins, roasted garlic vinaigrette'},
+                 {'name': 'Cobb Salad',
+                 'description': 'Blue cheese crumbles, organic romaine, bacon, tomato, hard boiled egg, red onion, avocado, house-made ranch dressing'},
             ]
         }
     }
@@ -90,6 +109,15 @@ class Lunch extends Component {
                     </div>
                 )
             })
+        const showSunsetMenu = 
+            this.state.sunsetMenu.map((item, index) => {
+                return(
+                    <div key={index}>
+                        <p>{item.name}</p>
+                        <span>{item.description}</span>
+                    </div>
+                )
+            })
         
     
         return(
@@ -105,6 +133,10 @@ class Lunch extends Component {
                 <h3>Sandwiches</h3>
                 <div className="plateList">
                     {showSandwichItems}
+                </div>
+                <h3>Sunset Menu, 3p-6p daily</h3>
+                <div className="plateList">
+                    {showSunsetMenu}
                 </div>
             </div>
         )
