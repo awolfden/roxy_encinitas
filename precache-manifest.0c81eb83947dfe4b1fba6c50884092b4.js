@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "19e2866fd230ccd62eddd4388609828f",
+    "revision": "2e8065865118e0ff5415379c7ced0496",
     "url": "/index.html"
   },
   {
-    "revision": "8cea61678cb7249d4d54",
-    "url": "/static/css/2.48adc591.chunk.css"
+    "revision": "bb64e4eda4b149d08a02",
+    "url": "/static/css/2.ab306a18.chunk.css"
   },
   {
-    "revision": "8067cf34fcbf37fe54c4",
-    "url": "/static/css/main.dbfe448b.chunk.css"
+    "revision": "7bbed6cfc3b0fdceadf8",
+    "url": "/static/css/main.5ad42fb8.chunk.css"
   },
   {
-    "revision": "8cea61678cb7249d4d54",
-    "url": "/static/js/2.69070adf.chunk.js"
+    "revision": "bb64e4eda4b149d08a02",
+    "url": "/static/js/2.5afff363.chunk.js"
   },
   {
-    "revision": "8067cf34fcbf37fe54c4",
-    "url": "/static/js/main.c712806b.chunk.js"
+    "revision": "7bbed6cfc3b0fdceadf8",
+    "url": "/static/js/main.4d14916e.chunk.js"
   },
   {
     "revision": "42ac5946195a7306e2a5",
@@ -44,8 +44,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/menu-roxy-logo.798d9012.png"
   },
   {
-    "revision": "05a36bd76737cd63153f43a400785cbf",
-    "url": "/static/media/openformusic.05a36bd7.png"
+    "revision": "a757a3f9e44a43bf15c10a9cbdaa9638",
+    "url": "/static/media/roxy_blocks.a757a3f9.png"
   },
   {
     "revision": "5a8061f966c31973911f7cc3dc1fa9f8",
