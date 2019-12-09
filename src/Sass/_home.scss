@@ -35,6 +35,16 @@
         display: flex;
         justify-content: center;
     }
+
+    #restaurantGuru {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        position: relative;
+        top: 70px;
+        padding-right: 25px;
+        opacity: 95%;
+    }
     
     h6 {
         

@@ -35,14 +35,16 @@ class Dinner extends Component {
                  'description': 'House made buffalo sauce or salt and pepper seasoning, choice of blue cheese or ranch dressing'}
             ],
             entrees: [
-                {'name': 'Pork Schnitzel',
-                 'description': 'House made spqetzle, braised red cabbage, brown mushroom gravy'},
-                {'name': 'Beef Stroganoff',
-                 'description': '6oz NY strip, shallots, mushrooms, cream, brandy, fresh tagliatelle pasta'},
-                {'name': 'Market Catch of the Day',
-                 'description': 'Melted Indian eggplant, green papaya salad, ponzu vinaigrette'},
+                {'name': 'Ribs N Mac',
+                 'description': 'Slow roasted St Louis ribs, chipotle bbq sauce, mamas baked mac n cheese'},
+                {'name': 'Harvest Bowl',
+                 'description': 'Quinoa, roasted butternut squash and mushrooms, romanesco, kale pesto, pepitas and chicken breast 5 | falafel 6 | shrimp 7 | salmon 8'},
+                {'name': 'Smoked Gouda Mac & Cheese',
+                 'description': 'Smoked gouda, carmalized onion, bacon'},
+                {'name': 'Potato Scallops',
+                 'description': 'Roasted creamer potatoes, cauliflower puree, romesco sauce, toasted almonds'},
                 {'name': 'Chicken Under a Brick',
-                 'description': 'Bacon lardon, roasted mushroom, onion, yams, sherry brown butter'}
+                 'description': 'Creamy polenta, parmesan, goat cheese, roasted romanesco, cauliflower, lemon brown butter sauce'}
             ],
             salads: [
                 {'name': 'Add to any salad:',
