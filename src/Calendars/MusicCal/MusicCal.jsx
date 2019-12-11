@@ -41,7 +41,7 @@ class MusicCal extends Component {
   
   getEvents = async () => {
     try {
-      const response = await fetch("https://www.googleapis.com/calendar/v3/calendars/info@roxyencinitas.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg");
+      const response = await fetch("https://www.googleapis.com/calendar/v3/calendars/info@roxyencinitas.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg&maxResults=2500");
       if(response.status !== 200){
         throw(Error(response.statusText));
       }
