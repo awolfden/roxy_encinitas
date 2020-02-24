@@ -52,6 +52,7 @@ export default function CenteredTabs() {
       <header className="App-header">
         <img src={menuRoxy} className="shop-logo" alt="logo" />
       </header>
+      <p>Menu is subject to change</p>
         <Paper className={classes.root}>
             <Tabs
                 value={value}

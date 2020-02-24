@@ -202,6 +202,16 @@
   top: 43px;
   margin-left: 10px;
 }
+#contact .contactTitle {
+  margin-top: 10px;
+}
+#contact .emailLink:hover {
+  color: #5092E4;
+}
+#contact .contactLink {
+  position: relative;
+  left: 10px;
+}
 #contact div.info {
   padding: 20px;
   background: #2121218f;

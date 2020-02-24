@@ -131,21 +131,22 @@ class Brunch extends Component {
     
         return(
             <div id="brunch">
-                <h3>Brunch Cocktails</h3>
-                <div className="brunchList">
-                    {showBrunchDrinks}
-                </div>
-                <h3>Appetizer</h3>
+                
+                <h3>Appetizers</h3>
                 <div className="brunchList">
                     {showBrunchApps}
                 </div>
-                <h3>Salad</h3>
+                <h3>Salads</h3>
                 <div className="brunchList">
                     {showBrunchSalad}
                 </div>
-                <h3>Sandwich</h3>
+                <h3>Sandwiches</h3>
                 <div className="brunchList">
                     {showBrunchSandwich}
+                </div>
+                <h3>Brunch Cocktails</h3>
+                <div className="brunchList">
+                    {showBrunchDrinks}
                 </div>
                 
             </div>
