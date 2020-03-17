@@ -9,7 +9,7 @@ import Contact from './Contact/Contact';
 import Shop from './Shop/Shop';
 import Loader from './Loader/Loader';
 import InstagramFeed from './InstagramFeed/InstagramFeed';
-
+import CoronaVirus from './CoronaVirus/CoronaVirus';
 
 
 class App extends Component {
@@ -37,6 +37,7 @@ class App extends Component {
          {this.state.showLoader ? <Loader/> : null}
          {this.state.showLoader ? null : <Navigation/>}
          {this.state.showLoader ? null : <Home/>}
+         {this.state.showLoader ? null : <CoronaVirus/>}
          {this.state.showLoader ? null : <OpenForMusic/>}
          {this.state.showLoader ? null : <Calendars/>}
          {this.state.showLoader ? null : <Navigation/>}

@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import dessert from '../../images/roxy_dessert.png';
 
 class Drinks extends Component {
     constructor(){
@@ -68,7 +69,7 @@ class Drinks extends Component {
         return(
             <div id="drinks">
                 
-                <h3>Happy Hour</h3>
+                {/* <h3>Happy Hour</h3>
                 <div className="cocktailList">
                     <span className="happyDetails">Monday 11a-11p | Tuesday-Friday 3p-6p</span>
                     {showHappyHour}
@@ -77,7 +78,8 @@ class Drinks extends Component {
                 <h3>Cocktails</h3>
                 <div className="cocktailList">
                     {showDrinks}
-                </div>
+                </div> */}
+                <img src={dessert} alt="desserts and drinks menu"/>
             </div>
         )
     }

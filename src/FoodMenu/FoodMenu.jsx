@@ -62,9 +62,9 @@ export default function CenteredTabs() {
                 centered
             >
                 <Tab onClick={() => setTab(1)} label="Dinner" />
-                <Tab onClick={() => setTab(2)} label="Brunch" />
+                {/* <Tab onClick={() => setTab(2)} label="Brunch" /> */}
                 <Tab onClick={() => setTab(3)} label="Lunch" />
-                <Tab onClick={() => setTab(4)} label="Drinks" />
+                <Tab onClick={() => setTab(4)} label="Desserts and Drinks" />
             </Tabs>
         </Paper>
         {<h1>{showTab()}</h1>}
