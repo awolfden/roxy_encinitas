@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import dinner from '../../images/roxy_dinner.png';
+import dinner from '../../images/roxy_takeout_menu.png';
 
 
 
@@ -134,7 +134,7 @@ class Dinner extends Component {
                     {showSandwiches}
                 </div> */}
                 
-                <img src={dinner} alt='dinner menu'></img>
+                <img src={dinner} alt='dinner menu' style={{width: '80%'}}></img>
                 
                 
             </div>
