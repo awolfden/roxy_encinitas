@@ -347,6 +347,17 @@ div.rbc-event {
     margin: 0px;
   }
 
+  #coronaVirus p {
+    font-size: 12px;
+    text-align: center;
+  }
+  #coronaVirus div.description {
+    width: 85%;
+    padding: 0px !important;
+    margin: 0px !important;
+    text-align: center;
+  }
+
   #openForMusic {
     padding-bottom: 50px;
     padding-top: 15px;
@@ -734,6 +745,12 @@ div.rbc-event {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=1 );
 }
 
+@media only screen and (max-width: 411px) {
+  #coronaVirus {
+    font-size: 12px;
+    color: red;
+  }
+}
 * {
   font-family: "Lato", sans-serif !important;
 }

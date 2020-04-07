@@ -17,6 +17,11 @@ class CoronaVirus extends Component {
                     </div>
                     
                 </div>
+                <div>
+                <a href="https://www.doordash.com/business/413264/?utm_source=partner-link&utm_medium=website&utm_campaign=413264&utm_content=white-xl" target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash" style={{textDecoration: "none"}}>
+                    <div style={{position: "relative", width:268, height:118, margin: "auto", backgroundImage: "url('https://cdn.doordash.com/media/button/button_white_xl.svg')", color:"transparent"}}>Order Food Delivery with DoorDash</div>
+                </a>
+                </div>
             </div>
         )
     }
