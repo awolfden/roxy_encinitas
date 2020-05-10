@@ -73,12 +73,12 @@ class Drinks extends Component {
                 <div className="cocktailList">
                     <span className="happyDetails">Monday 11a-11p | Tuesday-Friday 3p-6p</span>
                     {showHappyHour}
-                </div>
+                </div> */}
 
                 <h3>Cocktails</h3>
                 <div className="cocktailList">
                     {showDrinks}
-                </div> */}
+                </div>
                 <img src={dessert} alt="desserts and drinks menu"/>
             </div>
         )
