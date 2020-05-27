@@ -28,6 +28,7 @@ class Home extends Component {
                 <div className="flexContainer">
                     <h6><a href="#openForMusic">1920's Ambiance</a> · <a href="#menu">Classic Cocktails</a> · <a href="#menu">Small Plates</a> · <a href="#calendars">Live Music</a></h6>
                 </div>
+                
                 <div id="restaurantGuru">
                     <div>
                     <link href="https://awards.infcdn.net/circ_n.css" rel="stylesheet"/><div id="rest_circ" onclick="if(event.target.nodeName.toLowerCase() != 'a') {window.open(this.querySelector('.circ_top_title').href);return 0;}"><div class="circ_cont"><div class="circ_img" style={{background: "url('https://awards.infcdn.net/img/star_red.svg') no-repeat center"}}>&nbsp;</div><a href="https://restaurantguru.com" target="_blank" class="circ_top_title">Restaurant Guru 2019</a><span>Recommended</span><a href="https://restaurantguru.com/The-Roxy-Encinitas-San-Diego" class="circ_bot_title" target="_blank">The Roxy Encinitas</a></div></div>

@@ -123,7 +123,7 @@ class Lunch extends Component {
     
         return(
             <div id="smallPlates">
-                {/* <h3>Small Plates</h3>
+                <h3>Small Plates</h3>
                 <div className="plateList">
                     {showSmallPlateItems}
                 </div>
@@ -138,8 +138,8 @@ class Lunch extends Component {
                 <h3>Sunset Menu, 3p-6p daily</h3>
                 <div className="plateList">
                     {showSunsetMenu}
-                </div> */}
-                <img src={lunch} alt="lunch menu" style={{width:'90%'}}></img>
+                </div>
+                {/* <img src={lunch} alt="lunch menu" style={{width:'90%'}}></img> */}
             </div>
         )
     }

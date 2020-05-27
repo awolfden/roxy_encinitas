@@ -79,7 +79,7 @@ class Drinks extends Component {
                 <div className="cocktailList">
                     {showDrinks}
                 </div>
-                <img src={dessert} alt="desserts and drinks menu"/>
+                {/* <img src={dessert} alt="desserts and drinks menu"/> */}
             </div>
         )
     }

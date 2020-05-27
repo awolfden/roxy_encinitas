@@ -37,7 +37,7 @@ class App extends Component {
          {this.state.showLoader ? <Loader/> : null}
          {this.state.showLoader ? null : <Navigation/>}
          {this.state.showLoader ? null : <Home/>}
-         {this.state.showLoader ? null : <CoronaVirus/>}
+         {/* {this.state.showLoader ? null : <CoronaVirus/>} */}
          {this.state.showLoader ? null : <OpenForMusic/>}
          {this.state.showLoader ? null : <Calendars/>}
          {this.state.showLoader ? null : <Navigation/>}

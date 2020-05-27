@@ -131,6 +131,10 @@
 #menu p {
   text-align: center;
 }
+#menu .flex-container {
+  display: flex;
+  justify-content: center;
+}
 
 #foodmenu {
   background-color: gray;
@@ -745,12 +749,6 @@ div.rbc-event {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr="#a6000000", endColorstr="#00000000",GradientType=1 );
 }
 
-@media only screen and (max-width: 411px) {
-  #coronaVirus {
-    font-size: 12px;
-    color: red;
-  }
-}
 * {
   font-family: "Lato", sans-serif !important;
 }
