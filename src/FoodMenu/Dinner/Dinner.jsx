@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import dinner from '../../images/roxy_takeout_menu.png';
+import dinner from '../../images/enci_COVIDDinner.jpg';
 
 
 
@@ -117,7 +117,7 @@ class Dinner extends Component {
     
         return(
             <div id="dinner">
-                <h3>Small Plates</h3>
+                {/* <h3>Small Plates</h3>
                 <div className="dinnerList">
                     {showSmallPlates}
                 </div>
@@ -132,9 +132,9 @@ class Dinner extends Component {
                 <h3>Sandwiches</h3>
                 <div className="dinnerList">
                     {showSandwiches}
-                </div>
+                </div> */}
                 
-                {/* <img src={dinner} alt='dinner menu' style={{width: '80%'}}></img> */}
+                <img src={dinner} alt='dinner menu' style={{width: '70%'}}></img>
                 
                 
             </div>
