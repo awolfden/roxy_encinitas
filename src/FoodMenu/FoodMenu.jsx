@@ -54,7 +54,7 @@ export default function CenteredTabs() {
       </header>
       
       <div className="flex-container">
-        <a href="https://www.doordash.com/business/413264/?utm_source=partner-link&utm_medium=website&utm_campaign=413264&utm_content=white-xl" target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash" style={{textDecoration: "none"}}>
+        <a href="https://order.online/store/the-roxy-encinitas-931020" target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash" style={{textDecoration: "none"}}>
             <div style={{width:180, height:80, backgroundSize: 'contain', margin: "15px 0px 5px 0px", backgroundImage: "url('https://cdn.doordash.com/media/button/button_white_xl.svg')", color:"transparent"}}>Order Food Delivery with DoorDash</div>
         </a>
       </div>
