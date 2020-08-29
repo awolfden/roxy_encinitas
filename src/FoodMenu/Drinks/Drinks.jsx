@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import dessert from '../../images/roxy_dessert.png';
+import dessert from '../../images/enci_COVIDDessert.jpg';
+import cocktails from '../../images/enci_COVIDDrinks.jpg';
 
 class Drinks extends Component {
     constructor(){
@@ -75,11 +76,12 @@ class Drinks extends Component {
                     {showHappyHour}
                 </div> */}
 
-                <h3>Cocktails</h3>
-                <div className="cocktailList">
+                {/* <h3>Cocktails</h3> */}
+                {/* <div className="cocktailList">
                     {showDrinks}
-                </div>
-                {/* <img src={dessert} alt="desserts and drinks menu"/> */}
+                </div> */}
+                <img src={dessert} alt="desserts and drinks menu"/>
+                <img src={cocktails} alt="desserts and drinks menu"/>
             </div>
         )
     }
