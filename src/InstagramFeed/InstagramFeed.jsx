@@ -9,28 +9,44 @@ class InstagramFeed extends Component {
             
         }
     }
+    
+    componentDidMount(){
+        this.getPosts();
+    }
 
     componentDidMount(){
         this.getPosts();
     }
 
     getPosts = async () => {
+        const apiKey = 'IGQVJXcEpiTUFpdndGNFVjQk5lSUtvamw4bHhndlAyNlJjSGpTSlVIT19GTW5hRkRvSld0S1dFLVRadks2TEEySmNpY1NXNEpweVNNQndSYll6MldoeHlHN3JEVFNRUTlvb0NtQ19n';
+        
         try {
-          const response = await fetch("https://api.instagram.com/v1/users/self/media/recent/?access_token=2218274225.bd1c922.3dd782e1f95a4f159623b9a88d7fae39");
+          const response = await fetch(`https://graph.instagram.com/me/media?fields=id,caption,media_type,media_url,thumbnail_url,permalink&access_token=${apiKey}`);
           if(response.status !== 200){
             throw(Error(response.statusText));
           }
           const parsedResponse = await response.json();
-          //console.log(parsedResponse, "insta PR");
+        //   console.log(parsedResponse, "insta PR");
     
           const postsArray = parsedResponse.data.map((post) => {
-            //console.log(post);
-            return {
-                id: post.id,
-                img: post.images.standard_resolution.url,
-                hyperlink: post.link,
-                caption: post.caption.text
+            console.log(post);
+            if(post.media_type === "VIDEO"){
+                return {
+                    id: post.id,
+                    img: post.thumbnail_url,
+                    hyperlink: post.permalink,
+                    caption: post.caption
+                }
+            } else {
+                return {
+                    id: post.id,
+                    img: post.media_url,
+                    hyperlink: post.permalink,
+                    caption: post.caption
+                }
             }
+            
             
           });
     
