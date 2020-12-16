@@ -135,6 +135,9 @@
   display: flex;
   justify-content: center;
 }
+#menu .toastButton {
+  margin-top: 30px;
+}
 
 #foodmenu {
   background-color: gray;

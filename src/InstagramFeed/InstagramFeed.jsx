@@ -47,7 +47,6 @@ class InstagramFeed extends Component {
                 }
             }
             
-            
           });
     
           //console.log(postsArray, "posts array");

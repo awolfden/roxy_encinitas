@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {MuiThemeProvider, createMuiTheme} from '@material-ui/core';
-import { grey, brown } from '@material-ui/core/colors';
+import { grey, brown, red } from '@material-ui/core/colors';
 
 
 const theme = createMuiTheme({
@@ -19,7 +19,11 @@ const theme = createMuiTheme({
             light: brown[400],
             dark: brown[400]
         },
-        
+        error: {
+            main: red[900],
+            light: red[400],
+            dark: red[400]
+        }
     }
 });
 

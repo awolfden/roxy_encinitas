@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
+import Button from '@material-ui/core/Button';
 import Drinks from './Drinks/Drinks';
 import Lunch from './Lunch/Lunch';
 import Brunch from './Brunch/Brunch';
@@ -54,9 +55,12 @@ export default function CenteredTabs() {
       </header>
       
       <div className="flex-container">
-        <a href="https://order.online/store/the-roxy-encinitas-931020" target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash" style={{textDecoration: "none"}}>
+        {/* <a href="https://order.online/store/the-roxy-encinitas-931020" target="_blank" alt="Order Food Delivery with DoorDash" title="Order Food Delivery with DoorDash" style={{textDecoration: "none"}}>
             <div style={{width:180, height:80, backgroundSize: 'contain', margin: "15px 0px 5px 0px", backgroundImage: "url('https://cdn.doordash.com/media/button/button_white_xl.svg')", color:"transparent"}}>Order Food Delivery with DoorDash</div>
-        </a>
+        </a> */}
+        <Button onClick={() => { window.open("https://www.toasttab.com/the-roxy-encinitas-517-s-coast-hwy-101", "_blank") }} variant="contained" color="secondary" className='toastButton'>
+          Order Online With Toast!
+        </Button>
       </div>
 
       <p>Menu is subject to change</p>

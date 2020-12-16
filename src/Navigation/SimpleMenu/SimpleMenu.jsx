@@ -29,6 +29,7 @@ export default function SimpleMenu() {
       >
         <MenuItem onClick={handleClose}><a href="#home" style={{ textDecoration: 'none', color: 'black' }}>Home</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#calendars" style={{ textDecoration: 'none', color: 'black' }}>Calendar</a></MenuItem>
+        <MenuItem onClick={handleClose}><a href="https://www.toasttab.com/the-roxy-encinitas-517-s-coast-hwy-101" target="_blank" style={{ textDecoration: 'none', color: 'black' }}>Order Online</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#menu" style={{ textDecoration: 'none', color: 'black' }}>Menu</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#shop" style={{ textDecoration: 'none', color: 'black' }}>Shop</a></MenuItem>
