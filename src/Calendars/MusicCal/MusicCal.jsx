@@ -68,7 +68,8 @@ class MusicCal extends Component {
               "end": dateStart,
               "description" : event.description,
               "allDay?": false,
-              "resource?": null
+              "resource?": null,
+              "location": event.location
             }
           )
         } else if (event.start.date){
