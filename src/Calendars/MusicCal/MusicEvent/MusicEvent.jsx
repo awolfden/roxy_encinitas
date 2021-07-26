@@ -20,7 +20,7 @@ class MusicEvent extends Component {
                     <h1>{this.props.event.title}</h1>
                     <h1>{`${newTime}`}</h1>
                     <h1>{this.props.event.description}</h1>
-                    {this.props.event.location ? <a href={this.props.event.location} target="_blank" rel="noopener noreferrer">Get Tickets Here!</a> : null}
+                    {this.props.event.location ? <a href={this.props.event.location} target="_blank" >Get Tickets Here!</a> : null}
                 </div>
             </div>
             
