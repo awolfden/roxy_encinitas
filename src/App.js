@@ -10,6 +10,7 @@ import Shop from './Shop/Shop';
 import Loader from './Loader/Loader';
 import InstagramFeed from './InstagramFeed/InstagramFeed';
 import CoronaVirus from './CoronaVirus/CoronaVirus';
+import EmailCaptureV2 from './EmailCaptureV2/EmailCaptureV2';
 
 
 class App extends Component {
@@ -45,7 +46,7 @@ class App extends Component {
          {this.state.showLoader ? null : <Contact/>}
          {this.state.showLoader ? null : <Shop/>}
          {this.state.showLoader ? null : <InstagramFeed/>}
-
+         {this.state.showLoader ? null : <EmailCaptureV2/>}
   
       </div>
     )
