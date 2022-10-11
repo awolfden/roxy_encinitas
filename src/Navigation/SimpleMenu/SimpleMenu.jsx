@@ -29,11 +29,11 @@ export default function SimpleMenu() {
       >
         <MenuItem onClick={handleClose}><a href="#home" style={{ textDecoration: 'none', color: 'black' }}>Home</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#calendars" style={{ textDecoration: 'none', color: 'black' }}>Calendar</a></MenuItem>
-        <MenuItem onClick={handleClose}><a href="https://www.toasttab.com/the-roxy-encinitas-517-s-coast-hwy-101" target="_blank" style={{ textDecoration: 'none', color: 'black' }}>Order Online</a></MenuItem>
+        <MenuItem onClick={handleClose}><a href="https://www.toasttab.com/the-roxy-encinitas-517-s-coast-hwy-101" target="_blank" style={{ textDecoration: 'none', color: 'black' }}>Online Shop</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#menu" style={{ textDecoration: 'none', color: 'black' }}>Menu</a></MenuItem>
         <MenuItem onClick={handleClose}><a href="#contact" style={{ textDecoration: 'none', color: 'black' }}>Contact</a></MenuItem>
-        <MenuItem onClick={handleClose}><a href="#shop" style={{ textDecoration: 'none', color: 'black' }}>Shop</a></MenuItem>
-        <MenuItem onClick={handleClose}><a href="#insta" style={{ textDecoration: 'none', color: 'black' }}>Instagram</a></MenuItem>
+        <MenuItem onClick={handleClose}><a href="https://egift.technology/Main.aspx?key=theroxy" style={{ textDecoration: 'none', color: 'black' }}>Gift Cards</a></MenuItem>
+        {/* <MenuItem onClick={handleClose}><a href="#insta" style={{ textDecoration: 'none', color: 'black' }}>Instagram</a></MenuItem> */}
         <MenuItem onClick={handleClose}><a href="https://www.yelp.com/reservations/the-roxy-encinitas-encinitas-2?from_reserve_now=1" target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'black' }}>Reservations</a></MenuItem>
       </Menu>
     </div>

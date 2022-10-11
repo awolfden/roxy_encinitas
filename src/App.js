@@ -11,7 +11,7 @@ import Loader from './Loader/Loader';
 import InstagramFeed from './InstagramFeed/InstagramFeed';
 import CoronaVirus from './CoronaVirus/CoronaVirus';
 import EmailCaptureV2 from './EmailCaptureV2/EmailCaptureV2';
-
+import GiftCard from './GiftCard/GiftCard';
 
 class App extends Component {
   constructor(){
@@ -40,14 +40,13 @@ class App extends Component {
          {this.state.showLoader ? null : <Home/>}
          {/* {this.state.showLoader ? null : <CoronaVirus/>} */}
          {this.state.showLoader ? null : <OpenForMusic/>}
+         {this.state.showLoader ? null : <GiftCard/>}
          {this.state.showLoader ? null : <Calendars/>}
          {this.state.showLoader ? null : <Navigation/>}
          {this.state.showLoader ? null : <FoodMenu/>}
          {this.state.showLoader ? null : <Contact/>}
-         {this.state.showLoader ? null : <Shop/>}
-         {this.state.showLoader ? null : <InstagramFeed/>}
+         {/* {this.state.showLoader ? null : <InstagramFeed/>} */}
          {this.state.showLoader ? null : <EmailCaptureV2/>}
-  
       </div>
     )
   }
