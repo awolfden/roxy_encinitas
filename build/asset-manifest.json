@@ -1,24 +1,30 @@
 {
   "files": {
-    "main.css": "/static/css/main.5ad42fb8.chunk.css",
-    "main.js": "/static/js/main.4d14916e.chunk.js",
-    "main.js.map": "/static/js/main.4d14916e.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/css/2.ab306a18.chunk.css": "/static/css/2.ab306a18.chunk.css",
-    "static/js/2.5afff363.chunk.js": "/static/js/2.5afff363.chunk.js",
-    "static/js/2.5afff363.chunk.js.map": "/static/js/2.5afff363.chunk.js.map",
+    "main.css": "/static/css/main.10059a2c.css",
+    "main.js": "/static/js/main.21df5150.js",
+    "static/media/wood_texture.jpg": "/static/media/wood_texture.c02b33792c6f23b8e7ec.jpg",
+    "static/media/barrels.jpg": "/static/media/barrels.7d08a85cc9c47f2e0220.jpg",
+    "static/media/gramophone_ivory.jpg": "/static/media/gramophone_ivory.388c1a913858994d78b4.jpg",
+    "static/media/encinitas_specials.png": "/static/media/encinitas_specials.456f49818ea57868792b.png",
+    "static/media/enci_COVIDDrinks.jpg": "/static/media/enci_COVIDDrinks.50e8ce6fe40abe2a9afc.jpg",
+    "static/media/summer_banner.png": "/static/media/summer_banner.74ddf9dbd7c7e1e99677.png",
+    "static/media/enci_COVIDDessert.jpg": "/static/media/enci_COVIDDessert.37b6dc569e7f008fc9d4.jpg",
+    "static/media/EnciBrunchSpring2023.png": "/static/media/EnciBrunchSpring2023.cb14dcdca261a6acb77e.png",
+    "static/media/EnciLunchSpring2023.png": "/static/media/EnciLunchSpring2023.33ed1b562c496d59ff4f.png",
+    "static/media/EnciDinnerSpring2023.png": "/static/media/EnciDinnerSpring2023.2570594fdb4c91b48cf1.png",
+    "static/media/gramophone_logo_white.png": "/static/media/gramophone_logo_white.30b6e24c2a838e2974d4.png",
+    "static/media/roxymates.png": "/static/media/roxymates.e0eb7f3fa8fe7854d88c.png",
+    "static/media/roxy_giftcard.jpg": "/static/media/roxy_giftcard.515e95338e6b5c58cc4a.jpg",
+    "static/media/menu-roxy-logo.png": "/static/media/menu-roxy-logo.6e814ec9caf01dc567b0.png",
+    "static/media/contact-roxy-logo.png": "/static/media/contact-roxy-logo.79b3bf01f715155e7756.png",
+    "static/media/shop_roxy.png": "/static/media/shop_roxy.4cef5f5d3a9cc2aecb9a.png",
+    "static/media/roxy_blocks.png": "/static/media/roxy_blocks.2f5a7c94cf85c45b8033.png",
     "index.html": "/index.html",
-    "precache-manifest.0c81eb83947dfe4b1fba6c50884092b4.js": "/precache-manifest.0c81eb83947dfe4b1fba6c50884092b4.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/2.ab306a18.chunk.css.map": "/static/css/2.ab306a18.chunk.css.map",
-    "static/css/main.5ad42fb8.chunk.css.map": "/static/css/main.5ad42fb8.chunk.css.map",
-    "static/media/App.css": "/static/media/wood_texture.8b664c63.jpg",
-    "static/media/contact-roxy-logo.png": "/static/media/contact-roxy-logo.7a86ad60.png",
-    "static/media/gramophone_logo_white.png": "/static/media/gramophone_logo_white.cf59c5b7.png",
-    "static/media/menu-roxy-logo.png": "/static/media/menu-roxy-logo.798d9012.png",
-    "static/media/roxy_blocks.png": "/static/media/roxy_blocks.a757a3f9.png",
-    "static/media/roxy_giftcard.jpg": "/static/media/roxy_giftcard.5a8061f9.jpg",
-    "static/media/shop_roxy.png": "/static/media/shop_roxy.be7f2d48.png"
-  }
+    "main.10059a2c.css.map": "/static/css/main.10059a2c.css.map",
+    "main.21df5150.js.map": "/static/js/main.21df5150.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.10059a2c.css",
+    "static/js/main.21df5150.js"
+  ]
 }
