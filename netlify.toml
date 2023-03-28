@@ -1,4 +1,3 @@
-# [build]
-#   Command = "CI='' npm run build"
-#   functions = "lambda"
-#   Publish = "build"
+[build]
+  Command = "CI='' npm run build"
+  Publish = "build"
