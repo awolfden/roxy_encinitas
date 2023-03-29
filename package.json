@@ -13,15 +13,17 @@
     "react-big-calendar": "^0.22.0",
     "react-dom": "^16.8.6",
     "react-pdf": "^4.1.0",
-    "react-scripts": "^5.0.1",
+    "react-scripts": "^3.4.0",
     "react-stripe-elements": "^3.0.0",
     "websocket-extensions": "^0.1.4"
   },
   "scripts": {
     "start": "run-p start:**",
     "start:app": "react-scripts start",
+    "start:lambda": "netlify-lambda serve src/lambda",
     "build": "run-p build:**",
     "build:app": "react-scripts build",
+    "build:lambda": "netlify-lambda build src/lambda",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
@@ -44,7 +46,9 @@
   },
   "devDependencies": {
     "gh-pages": "^2.0.1",
-    "npm-run-all": "^4.1.5"
+    "netlify-lambda": "^1.5.0",
+    "npm-run-all": "^4.1.5",
+    "stripe": "^7.4.0"
   },
   "homepage": "https://clever-shirley-69bb45.netlify.com/"
 }
