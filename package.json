@@ -13,7 +13,7 @@
     "react-big-calendar": "^0.22.0",
     "react-dom": "^16.8.6",
     "react-pdf": "^4.1.0",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^5.0.1",
     "react-stripe-elements": "^3.0.0",
     "websocket-extensions": "^0.1.4"
   },
