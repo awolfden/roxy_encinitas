@@ -18,6 +18,11 @@ import "react-big-calendar/lib/css/react-big-calendar.css";
 import '../../App.css';
 
 const localizer = momentLocalizer(moment);
+const currentDate = new Date()
+const oneYearAgo = new Date(currentDate);
+oneYearAgo.setFullYear(currentDate.getFullYear() - 1);
+const iso8601Date = oneYearAgo.toISOString();
+
 
 class MusicCal extends Component {
 
@@ -41,7 +46,7 @@ class MusicCal extends Component {
   
   getEvents = async () => {
     try {
-      const response = await fetch("https://www.googleapis.com/calendar/v3/calendars/info@roxyencinitas.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg&maxResults=2500");
+      const response = await fetch(`https://www.googleapis.com/calendar/v3/calendars/info@roxyencinitas.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg&maxResults=2500&timeMin=${iso8601Date}`);
       if(response.status !== 200){
         throw(Error(response.statusText));
       }
