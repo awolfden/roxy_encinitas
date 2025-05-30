@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import brunch from '../../images/BrunchWinter2024.png';
+import brunch from '../../images/BrunchSpring2025.png';
 
 class Brunch extends Component {
     constructor() {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import dinner from '../../images/DinnerWinter2024.png';
+import dinner from '../../images/DinnerSpring2025.png';
 
 
 
