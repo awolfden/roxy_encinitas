@@ -45,26 +45,6 @@ class Drinks extends Component {
 
 
     render(){
-
-        const showDrinks = 
-            this.state.cocktails.map((cocktail, index) => {
-                return(
-                    <div key={index}>
-                        <p>{cocktail.name}</p>
-                        <span>{cocktail.description}</span>
-                    </div>
-                )
-            })
-
-        const showHappyHour = 
-            this.state.happyHour.map((item, index) => {
-                return(
-                    <div key={index}>
-                        <p>{item.name}</p>
-                        <span>{item.description}</span>
-                    </div>
-                )
-            })
         
 
         return(

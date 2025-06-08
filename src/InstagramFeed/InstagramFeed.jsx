@@ -14,10 +14,6 @@ class InstagramFeed extends Component {
         this.getPosts();
     }
 
-    componentDidMount(){
-        this.getPosts();
-    }
-
     getPosts = async () => {
         const apiKey = 'IGQVJWM3NBSzhsX01GM0FCdHk4SEVjbXNxWk4zQVNiajNkRWtkMmt0elRJY0hvOTdJaWdNM0MzeXphd0RKYUEwRUpPNGxia3J0YkxQSFk3VTl3YkNJdllKOV81NG9wang4UjhSWWU1ajJMWjVTdm5CNgZDZD';
         

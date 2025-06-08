@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import moment from 'moment';
 import MusicEventModal from './MusicEventModal/MusicEventModal';
 import MobileMusicCal from './MobileMusicCal/MobileMusicCal';
@@ -20,9 +20,7 @@ const getOneYearAgo = () => {
   return oneYearAgo.toISOString();
 };
 
-const convertDateToISO = (date) => {
-  return moment.utc(date).toDate().toISOString();
-};
+
 
 const createEventObject = (event, convertDate) => {
   if (event.status !== "confirmed") return null;
@@ -65,9 +63,8 @@ const MusicCal = () => {
   const [error, setError] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
-  const convertDate = (date) => moment.utc(date).toDate();
-
-  const fetchEvents = async () => {
+  const fetchEvents = useCallback(async () => {
+    const convertDate = (date) => moment.utc(date).toDate();
     try {
       setIsLoading(true);
       setError(null);
@@ -95,7 +92,7 @@ const MusicCal = () => {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, []);
 
   useEffect(() => {
     fetchEvents();
@@ -112,7 +109,7 @@ const MusicCal = () => {
     window.addEventListener('resize', checkMobile);
     
     return () => window.removeEventListener('resize', checkMobile);
-  }, []);
+  }, [fetchEvents]);
 
   const handleSelectEvent = (event) => {
     setSelectedEvent(event);

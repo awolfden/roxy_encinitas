@@ -8,7 +8,6 @@ import FoodMenu from "./FoodMenu/FoodMenu";
 import Contact from "./Contact/Contact";
 
 import Loader from "./Loader/Loader";
-import InstagramFeed from "./InstagramFeed/InstagramFeed";
 import EmailCapture from "./EmailCapture/EmailCapture";
 import GiftCard from "./GiftCard/GiftCard";
 
