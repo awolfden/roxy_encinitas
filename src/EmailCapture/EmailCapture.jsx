@@ -179,7 +179,12 @@ export default function EmailCapture() {
     
     try {
       const payload = { ...formData };
-      const response = await fetch('/.netlify/functions/subscribe', {        
+      const isDevelopment = process.env.NODE_ENV === 'development';
+      const apiUrl = isDevelopment 
+        ? 'http://localhost:8888/.netlify/functions/subscribe'
+        : '/.netlify/functions/subscribe';
+      
+      const response = await fetch(apiUrl, {        
         method: 'POST',
         body: JSON.stringify(payload),
         headers: {
