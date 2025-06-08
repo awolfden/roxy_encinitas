@@ -6,6 +6,7 @@ import OpenForMusic from "./OpenForMusic/OpenForMusic";
 import Calendars from "./Calendars/Calendars";
 import FoodMenu from "./FoodMenu/FoodMenu";
 import Contact from "./Contact/Contact";
+import Admin from "./Admin/Admin";
 
 import Loader from "./Loader/Loader";
 import EmailCapture from "./EmailCapture/EmailCapture";
@@ -28,6 +29,13 @@ class App extends Component {
   };
 
   render() {
+    // Simple admin route detection
+    const isAdminRoute = window.location.pathname === "/admin";
+
+    if (isAdminRoute) {
+      return <Admin />;
+    }
+
     return (
       <div className="App">
         {this.state.showLoader ? <Loader /> : null}

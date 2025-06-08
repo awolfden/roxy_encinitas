@@ -6,7 +6,19 @@
 [functions]
   node_bundler = "esbuild"
 
+# Development configuration
+[dev]
+  command = "npm start"
+  publish = "build"
+  functions = "netlify/functions"
+
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+# Handle React Router client-side routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200

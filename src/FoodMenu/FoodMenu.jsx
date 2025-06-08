@@ -4,6 +4,7 @@ import Paper from '@material-ui/core/Paper';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Drinks from './Drinks/Drinks';
+import Desserts from './Desserts/Desserts';
 import Lunch from './Lunch/Lunch';
 import Brunch from './Brunch/Brunch';
 import menuRoxy from '../images/menu-roxy-logo.png';
@@ -135,6 +136,10 @@ export default function CenteredTabs() {
       )
     } else if (tab === 5) {
       return (
+        <Desserts />
+      )
+    } else if (tab === 6) {
+      return (
         <Drinks />
       )
     }
@@ -145,7 +150,8 @@ export default function CenteredTabs() {
     { id: 2, label: "Dinner" },
     { id: 3, label: "Brunch" },
     { id: 4, label: "Lunch" },
-    { id: 5, label: "Desserts and Drinks" }
+    { id: 5, label: "Desserts" },
+    { id: 6, label: "Drinks" }
   ];
 
   return (
@@ -169,7 +175,8 @@ export default function CenteredTabs() {
           <Tab onClick={() => setTab(2)} label="Dinner" />
           <Tab onClick={() => setTab(3)} label="Brunch" />
           <Tab onClick={() => setTab(4)} label="Lunch" />
-          <Tab onClick={() => setTab(5)} label="Desserts and Drinks" />
+          <Tab onClick={() => setTab(5)} label="Desserts" />
+          <Tab onClick={() => setTab(6)} label="Drinks" />
         </Tabs>
       </Paper>
 
