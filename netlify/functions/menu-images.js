@@ -1,8 +1,4 @@
-const fs = require("fs").promises;
-const path = require("path");
-
-// Simple file-based storage for menu images
-const dataFile = "/tmp/menu-images.json";
+const { getStore } = require("@netlify/blobs");
 
 // Default menu structure
 const defaultMenuData = {
@@ -14,11 +10,18 @@ const defaultMenuData = {
   drinks: { name: "Drinks", imageUrl: null, updatedAt: null },
 };
 
-// Read menu data from file
+// Initialize Netlify Blobs store
+const menuStore = getStore("menu-images");
+
+// Read menu data from Netlify Blobs
 async function readMenuData() {
   try {
-    const data = await fs.readFile(dataFile, "utf8");
-    const existingData = JSON.parse(data);
+    const existingData = await menuStore.get("menu-data", { type: "json" });
+
+    if (!existingData) {
+      // No data exists yet, return default data
+      return defaultMenuData;
+    }
 
     // Merge with default structure to ensure all sections exist
     // This handles migration when new sections are added
@@ -33,14 +36,20 @@ async function readMenuData() {
 
     return mergedData;
   } catch (error) {
-    // File doesn't exist, return default data
+    console.error("Error reading from Netlify Blobs:", error);
+    // Return default data on error
     return defaultMenuData;
   }
 }
 
-// Write menu data to file
+// Write menu data to Netlify Blobs
 async function writeMenuData(data) {
-  await fs.writeFile(dataFile, JSON.stringify(data, null, 2));
+  try {
+    await menuStore.set("menu-data", JSON.stringify(data));
+  } catch (error) {
+    console.error("Error writing to Netlify Blobs:", error);
+    throw error;
+  }
 }
 
 exports.handler = async (event, context) => {

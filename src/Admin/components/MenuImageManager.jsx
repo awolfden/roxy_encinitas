@@ -32,6 +32,7 @@ const MenuImageManager = () => {
       
       const response = await fetch(apiUrl);
       const result = await response.json();
+      
       if (result.success) {
         setCurrentMenuImages(result.data);
       }
