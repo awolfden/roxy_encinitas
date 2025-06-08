@@ -151,8 +151,14 @@ export default function EmailCapture() {
   const handleClose = () => setOpen(false);
 
   useEffect(() => {
-    const timer = setTimeout(handleOpen, 5000);
-    return () => clearTimeout(timer);
+    // Check if email capture is enabled via environment variable
+    // To enable: add REACT_APP_ENABLE_EMAIL_CAPTURE=true to your .env file
+    const isEmailCaptureEnabled = process.env.REACT_APP_ENABLE_EMAIL_CAPTURE === 'true';
+    
+    if (isEmailCaptureEnabled) {
+      const timer = setTimeout(handleOpen, 5000);
+      return () => clearTimeout(timer);
+    }
   }, []);
   
   const handleInputChange = (event) => {
