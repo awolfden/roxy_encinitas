@@ -10,12 +10,19 @@ const defaultMenuData = {
   drinks: { name: "Drinks", imageUrl: null, updatedAt: null },
 };
 
-// Initialize Netlify Blobs store (automatic configuration in Netlify Functions)
-const menuStore = getStore("menu-images");
+// Get Netlify Blobs store (initialized when needed)
+function getMenuStore() {
+  return getStore({
+    name: "menu-images",
+    siteID: process.env.NETLIFY_SITE_ID,
+    token: process.env.NETLIFY_TOKEN,
+  });
+}
 
 // Read menu data from Netlify Blobs
 async function readMenuData() {
   try {
+    const menuStore = getMenuStore();
     const existingData = await menuStore.get("menu-data", { type: "json" });
 
     if (!existingData) {
@@ -45,6 +52,7 @@ async function readMenuData() {
 // Write menu data to Netlify Blobs
 async function writeMenuData(data) {
   try {
+    const menuStore = getMenuStore();
     await menuStore.set("menu-data", JSON.stringify(data));
   } catch (error) {
     console.error("Error writing to Netlify Blobs:", error);
