@@ -184,17 +184,25 @@ const MenuImageManager = () => {
   }
 
   return (
-    <div style={{ maxWidth: '1200px' }}>
-      <h2 style={{ color: '#6B5B73', marginBottom: '30px' }}>Menu Image Management</h2>
+    <div style={{ width: '100%' }}>
+      <h2 style={{ 
+        color: '#4A5568', 
+        marginBottom: '40px',
+        fontSize: window.innerWidth <= 768 ? '24px' : '28px',
+        fontWeight: '600',
+        textAlign: 'left'
+      }}>
+        Menu Image Management
+      </h2>
       
       {/* Upload Area */}
       <div
         style={{
-          border: `2px dashed ${dragActive ? '#9CAF88' : '#E8DDD4'}`,
+          border: `2px dashed ${dragActive ? '#636b2f' : '#CBD5E0'}`,
           borderRadius: '12px',
-          padding: '40px',
+          padding: window.innerWidth <= 768 ? '20px' : '40px',
           textAlign: 'center',
-          backgroundColor: dragActive ? '#F9FDF7' : '#FBF9F6',
+          backgroundColor: dragActive ? '#F4F5F0' : '#FAFAFA',
           marginBottom: '30px',
           cursor: 'pointer',
           transition: 'all 0.3s ease'
@@ -214,14 +222,26 @@ const MenuImageManager = () => {
           style={{ display: 'none' }}
         />
         
-        <div style={{ fontSize: '48px', marginBottom: '15px' }}>📸</div>
-        <h3 style={{ color: '#6B5B73', marginBottom: '10px' }}>
+        <div style={{ fontSize: window.innerWidth <= 768 ? '36px' : '48px', marginBottom: '15px' }}>📸</div>
+        <h3 style={{ 
+          color: '#4A5568', 
+          marginBottom: '10px',
+          fontSize: window.innerWidth <= 768 ? '18px' : '24px'
+        }}>
           {dragActive ? 'Drop images here' : 'Upload Menu Images'}
         </h3>
-        <p style={{ color: '#8B6F47', margin: 0 }}>
-          Drag and drop images here, or click to select files
+        <p style={{ 
+          color: '#718096', 
+          margin: 0,
+          fontSize: window.innerWidth <= 768 ? '14px' : '16px'
+        }}>
+          {window.innerWidth <= 768 ? 'Tap to select files' : 'Drag and drop images here, or click to select files'}
         </p>
-        <p style={{ color: '#999', fontSize: '14px', marginTop: '10px' }}>
+        <p style={{ 
+          color: '#A0AEC0', 
+          fontSize: window.innerWidth <= 768 ? '12px' : '14px', 
+          marginTop: '10px' 
+        }}>
           Supports JPG, PNG, WebP files
         </p>
       </div>
@@ -229,47 +249,68 @@ const MenuImageManager = () => {
       {/* Uploaded Images Preview */}
       {uploadedImages.length > 0 && (
         <div style={{ marginBottom: '40px' }}>
-          <h3 style={{ color: '#6B5B73', marginBottom: '20px' }}>Ready to Upload</h3>
+          <h3 style={{ 
+            color: '#4A5568', 
+            marginBottom: '20px',
+            fontSize: window.innerWidth <= 768 ? '18px' : '24px',
+            textAlign: window.innerWidth <= 768 ? 'center' : 'left'
+          }}>
+            Ready to Upload
+          </h3>
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-            gap: '20px'
+            gridTemplateColumns: window.innerWidth <= 768 
+              ? '1fr' 
+              : 'repeat(auto-fit, minmax(340px, 1fr))',
+            gap: '24px'
           }}>
             {uploadedImages.map((image) => (
               <div key={image.id} style={{
-                border: '1px solid #E8DDD4',
-                borderRadius: '8px',
+                border: '1px solid #E2E8F0',
+                borderRadius: '12px',
                 overflow: 'hidden',
-                backgroundColor: 'white'
+                backgroundColor: '#FAFAFA',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease'
               }}>
-                <img 
-                  src={image.preview} 
-                  alt={image.name}
-                  style={{ 
-                    width: '100%', 
-                    height: '200px', 
-                    objectFit: 'cover' 
-                  }}
-                />
-                <div style={{ padding: '15px' }}>
-                  <p style={{ margin: '0 0 15px 0', fontWeight: 'bold', color: '#6B5B73' }}>
+                                  <img 
+                    src={image.preview} 
+                    alt={image.name}
+                    style={{ 
+                      width: '100%', 
+                      height: '220px', 
+                      objectFit: 'cover' 
+                    }}
+                  />
+                  <div style={{ padding: '20px' }}>
+                  <p style={{ margin: '0 0 15px 0', fontWeight: 'bold', color: '#4A5568' }}>
                     {image.name}
                   </p>
-                  <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap' }}>
+                  <div style={{ 
+                    display: 'grid', 
+                    gridTemplateColumns: window.innerWidth <= 768 
+                      ? 'repeat(2, 1fr)' 
+                      : 'repeat(3, 1fr)',
+                    gap: '8px'
+                  }}>
                     {menuSections.map((section) => (
                       <button
                         key={section.id}
                         onClick={() => uploadImage(image, section.id, section.name)}
                         disabled={uploading}
                         style={{
-                          backgroundColor: '#9CAF88',
+                          backgroundColor: '#636b2f',
                           color: 'white',
                           border: 'none',
-                          padding: '8px 12px',
+                          padding: window.innerWidth <= 768 ? '10px 8px' : '8px 12px',
                           borderRadius: '4px',
-                          fontSize: '12px',
+                          fontSize: window.innerWidth <= 768 ? '11px' : '12px',
                           cursor: uploading ? 'not-allowed' : 'pointer',
-                          opacity: uploading ? 0.6 : 1
+                          opacity: uploading ? 0.6 : 1,
+                          whiteSpace: 'nowrap',
+                          overflow: 'hidden',
+                          textOverflow: 'ellipsis',
+                          transition: 'background-color 0.2s ease'
                         }}
                       >
                         → {section.name}
@@ -279,14 +320,15 @@ const MenuImageManager = () => {
                   <button
                     onClick={() => removeImage(image.id)}
                     style={{
-                      backgroundColor: '#dc3545',
+                      backgroundColor: '#FC8181',
                       color: 'white',
                       border: 'none',
                       padding: '8px 12px',
                       borderRadius: '4px',
                       fontSize: '12px',
                       cursor: 'pointer',
-                      marginTop: '10px'
+                      marginTop: '10px',
+                      transition: 'background-color 0.2s ease'
                     }}
                   >
                     Remove
@@ -300,11 +342,22 @@ const MenuImageManager = () => {
 
       {/* Current Menu Sections */}
       <div>
-        <h3 style={{ color: '#6B5B73', marginBottom: '20px' }}>Current Menu Sections</h3>
+        <h3 style={{ 
+          color: '#4A5568', 
+          marginBottom: '20px',
+          fontSize: window.innerWidth <= 768 ? '18px' : '24px',
+          textAlign: window.innerWidth <= 768 ? 'center' : 'left'
+        }}>
+          Current Menu Sections
+        </h3>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          gap: '20px'
+          gridTemplateColumns: window.innerWidth <= 768 
+            ? '1fr' 
+            : window.innerWidth <= 1024 
+              ? 'repeat(2, 1fr)' 
+              : 'repeat(auto-fit, minmax(320px, 1fr))',
+          gap: '24px'
         }}>
           {menuSections.map((section) => {
             const menuData = currentMenuImages[section.id];
@@ -312,38 +365,50 @@ const MenuImageManager = () => {
             
             return (
               <div key={section.id} style={{
-                border: '1px solid #E8DDD4',
-                borderRadius: '8px',
-                padding: '20px',
-                backgroundColor: 'white'
+                border: '1px solid #E2E8F0',
+                borderRadius: '12px',
+                padding: '24px',
+                backgroundColor: '#FAFAFA',
+                boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
+                transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+                minHeight: '160px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between'
               }}>
-                <h4 style={{ color: '#6B5B73', margin: '0 0 10px 0' }}>{section.name}</h4>
-                
-                {hasImage ? (
-                  <div>
-                    <p style={{ color: '#8B6F47', fontSize: '14px', margin: '0 0 10px 0' }}>
-                      ✅ Image active
+                <div>
+                  <h4 style={{ color: '#4A5568', margin: '0 0 12px 0', fontSize: '16px', fontWeight: '600' }}>{section.name}</h4>
+                  
+                  {hasImage ? (
+                    <div>
+                      <p style={{ color: '#636b2f', fontSize: '14px', margin: '0 0 8px 0', fontWeight: '500' }}>
+                        ✅ Image active
+                      </p>
+                      <p style={{ color: '#A0AEC0', fontSize: '12px', margin: '0 0 0 0' }}>
+                        Updated: {new Date(menuData.updatedAt).toLocaleDateString()}
+                      </p>
+                    </div>
+                  ) : (
+                    <p style={{ color: '#A0AEC0', fontSize: '14px', margin: '0' }}>
+                      No image set
                     </p>
-                    <p style={{ color: '#999', fontSize: '12px', margin: '0 0 15px 0' }}>
-                      Updated: {new Date(menuData.updatedAt).toLocaleDateString()}
-                    </p>
-                  </div>
-                ) : (
-                  <p style={{ color: '#999', fontSize: '14px', margin: '0 0 15px 0' }}>
-                    No image set
-                  </p>
-                )}
+                  )}
+                </div>
                 
                 <button 
                   onClick={() => viewCurrentImage(section)}
                   style={{
-                    backgroundColor: hasImage ? '#9CAF88' : '#F0E8DA',
-                    color: hasImage ? 'white' : '#6B5B73',
-                    border: hasImage ? 'none' : '1px solid #E8DDD4',
-                    padding: '8px 16px',
-                    borderRadius: '4px',
+                    backgroundColor: hasImage ? '#636b2f' : '#EDF2F7',
+                    color: hasImage ? 'white' : '#4A5568',
+                    border: hasImage ? 'none' : '1px solid #E2E8F0',
+                    padding: '10px 18px',
+                    borderRadius: '8px',
                     fontSize: '14px',
-                    cursor: 'pointer'
+                    fontWeight: '500',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    width: '100%',
+                    marginTop: '8px'
                   }}
                 >
                   {hasImage ? 'View Current' : 'No Image'}

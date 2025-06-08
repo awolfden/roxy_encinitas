@@ -1,14 +1,22 @@
 import React from 'react';
-import { Container, Paper, Typography, Button, Box } from '@material-ui/core';
+import { Container, Paper, Typography, Button, Box, useTheme, useMediaQuery } from '@material-ui/core';
 import { useAuth } from './AuthProvider';
 
 const AdminLogin = () => {
   const { signIn, isLoading } = useAuth();
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   if (isLoading) {
     return (
-      <Container maxWidth="sm" style={{ marginTop: '80px' }}>
-        <Paper elevation={3} style={{ padding: '40px', textAlign: 'center' }}>
+      <Container maxWidth="sm" style={{ 
+        marginTop: isMobile ? '40px' : '80px',
+        padding: isMobile ? '0 16px' : '0'
+      }}>
+        <Paper elevation={3} style={{ 
+          padding: isMobile ? '20px' : '40px', 
+          textAlign: 'center' 
+        }}>
           <Typography variant="h6">Loading...</Typography>
         </Paper>
       </Container>
@@ -16,13 +24,35 @@ const AdminLogin = () => {
   }
 
   return (
-    <Container maxWidth="sm" style={{ marginTop: '80px' }}>
-      <Paper elevation={3} style={{ padding: '40px', textAlign: 'center' }}>
-        <Typography variant="h4" gutterBottom style={{ color: '#8B4513', marginBottom: '30px' }}>
+    <Container maxWidth="sm" style={{ 
+      marginTop: isMobile ? '40px' : '80px',
+      padding: isMobile ? '0 16px' : '0'
+    }}>
+      <Paper elevation={3} style={{ 
+        padding: isMobile ? '20px' : '40px', 
+        textAlign: 'center' 
+      }}>
+        <Typography 
+          variant={isMobile ? "h5" : "h4"} 
+          gutterBottom 
+          style={{ 
+            color: '#4A5568', 
+            marginBottom: '30px',
+            fontSize: isMobile ? '24px' : '32px'
+          }}
+        >
           Roxy Admin Portal
         </Typography>
         
-        <Typography variant="body1" style={{ marginBottom: '30px', color: '#666' }}>
+        <Typography 
+          variant="body1" 
+          style={{ 
+            marginBottom: '30px', 
+            color: '#718096',
+            fontSize: isMobile ? '14px' : '16px',
+            lineHeight: '1.5'
+          }}
+        >
           Sign in to access the restaurant management dashboard
         </Typography>
 
@@ -31,22 +61,27 @@ const AdminLogin = () => {
             variant="contained"
             onClick={() => signIn()}
             style={{
-              backgroundColor: '#8B4513',
+              backgroundColor: '#636b2f',
               color: 'white',
-              padding: '12px 30px',
-              fontSize: '16px',
-              textTransform: 'none'
+              padding: isMobile ? '14px 20px' : '12px 30px',
+              fontSize: isMobile ? '14px' : '16px',
+              textTransform: 'none',
+              width: '100%',
+              transition: 'background-color 0.2s ease',
+              '&:hover': {
+                backgroundColor: '#525a27'
+              }
             }}
           >
             Sign In
           </Button>
         </Box>
 
-        <Box style={{ marginTop: '30px', padding: '15px', backgroundColor: '#FFF8F0', borderRadius: '8px' }}>
-          <Typography variant="caption" style={{ color: '#8B4513', display: 'block', fontWeight: 'bold' }}>
+        <Box style={{ marginTop: '30px', padding: '15px', backgroundColor: '#F4F5F0', borderRadius: '8px', border: '1px solid #D4D6C8' }}>
+          <Typography variant="caption" style={{ color: '#636b2f', display: 'block', fontWeight: 'bold' }}>
             Admin Access Only
           </Typography>
-          <Typography variant="body2" style={{ marginTop: '5px', color: '#666', fontSize: '14px' }}>
+          <Typography variant="body2" style={{ marginTop: '5px', color: '#718096', fontSize: '14px' }}>
             Contact your administrator if you need access to this system.
           </Typography>
         </Box>
