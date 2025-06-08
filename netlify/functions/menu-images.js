@@ -10,7 +10,7 @@ const defaultMenuData = {
   drinks: { name: "Drinks", imageUrl: null, updatedAt: null },
 };
 
-// Initialize Netlify Blobs store
+// Initialize Netlify Blobs store (automatic configuration in Netlify Functions)
 const menuStore = getStore("menu-images");
 
 // Read menu data from Netlify Blobs
