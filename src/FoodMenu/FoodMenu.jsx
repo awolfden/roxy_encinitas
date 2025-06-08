@@ -12,11 +12,100 @@ import Dinner from './Dinner/Dinner';
 import Specials from './Specials/Specials';
 
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    backgroundColor: '#FFFEFB',
+    border: '1px solid #E8DDD4',
+    borderRadius: '12px',
+    margin: '20px 40px',
+    boxShadow: '0 6px 24px rgba(107, 91, 115, 0.12)',
+    overflow: 'hidden',
+    '& .MuiTabs-root': {
+      minHeight: '60px',
+    },
+    '& .MuiTabs-flexContainer': {
+      height: '60px',
+    },
+    '& .MuiTab-root': {
+      fontSize: '16px',
+      fontWeight: 'bold',
+      color: '#6B5B73',
+      textTransform: 'none',
+      minHeight: '60px',
+      padding: '12px 24px',
+      transition: 'all 0.2s ease',
+      borderRight: '1px solid #F0E8DA',
+      '&:last-child': {
+        borderRight: 'none',
+      },
+      '&:hover': {
+        backgroundColor: '#FBF9F6',
+        color: '#9CAF88',
+      },
+      '&.Mui-selected': {
+        backgroundColor: '#9CAF88',
+        color: '#fff',
+        '&:hover': {
+          backgroundColor: '#8B6F47',
+        },
+      },
+    },
+    '& .MuiTabs-indicator': {
+      display: 'none', // Hide the default indicator since we're using background colors
+    },
+    [theme.breakpoints.down('md')]: {
+      margin: '20px 20px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
-});
+  desktopTabs: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
+  mobileTabs: {
+    display: 'none',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+      backgroundColor: '#FFFEFB',
+      border: '1px solid #E8DDD4',
+      borderRadius: '8px',
+      margin: '10px 15px',
+      boxShadow: '0 4px 20px rgba(107, 91, 115, 0.08)',
+    },
+  },
+  mobileTabButton: {
+    width: '100%',
+    padding: '15px 20px',
+    backgroundColor: 'transparent',
+    border: 'none',
+    borderBottom: '1px solid #F0E8DA',
+    fontSize: '16px',
+    fontWeight: 'bold',
+    color: '#6B5B73',
+    textAlign: 'left',
+    cursor: 'pointer',
+    transition: 'all 0.2s ease',
+    '&:last-child': {
+      borderBottom: 'none',
+    },
+    '&:hover': {
+      backgroundColor: '#FBF9F6',
+      color: '#9CAF88',
+    },
+  },
+  mobileTabButtonActive: {
+    backgroundColor: '#9CAF88',
+    color: '#fff',
+    '&:hover': {
+      backgroundColor: '#8B6F47',
+      color: '#fff',
+    },
+  },
+}));
 
 export default function CenteredTabs() {
   const classes = useStyles();
@@ -52,6 +141,14 @@ export default function CenteredTabs() {
     }
   }
 
+  const menuTabs = [
+    { id: 1, label: "Specials" },
+    { id: 2, label: "Dinner" },
+    { id: 3, label: "Brunch" },
+    { id: 4, label: "Lunch" },
+    { id: 5, label: "Desserts and Drinks" }
+  ];
+
   return (
     <div id="menu">
       <header className="App-header">
@@ -60,7 +157,8 @@ export default function CenteredTabs() {
 
       <p>Menu is subject to change</p>
 
-      <Paper className={classes.root}>
+      {/* Desktop Tabs */}
+      <Paper className={`${classes.root} ${classes.desktopTabs}`}>
         <Tabs
           value={value}
           onChange={handleChange}
@@ -75,6 +173,25 @@ export default function CenteredTabs() {
           <Tab onClick={() => setTab(5)} label="Desserts and Drinks" />
         </Tabs>
       </Paper>
+
+      {/* Mobile Tabs */}
+      <div className={classes.mobileTabs}>
+        {menuTabs.map((menuTab) => (
+          <button
+            key={menuTab.id}
+            className={`${classes.mobileTabButton} ${
+              tab === menuTab.id ? classes.mobileTabButtonActive : ''
+            }`}
+            onClick={() => {
+              setTab(menuTab.id);
+              setValue(menuTab.id - 1);
+            }}
+          >
+            {menuTab.label}
+          </button>
+        ))}
+      </div>
+
       {<h1>{showTab()}</h1>}
     </div>
 

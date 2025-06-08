@@ -1,165 +1,173 @@
-import React, { Component } from 'react';
-import MusicEvent from './MusicEvent/MusicEvent';
-
-import {
-    Calendar,
-    //DateLocalizer,
-    momentLocalizer,
-    //globalizeLocalizer,
-    //move,
-    //Views,
-    //Navigate,
-    //components,
-  } from 'react-big-calendar';
-
+import React, { useState, useEffect } from 'react';
 import moment from 'moment';
+import MusicEventModal from './MusicEventModal/MusicEventModal';
+import MobileMusicCal from './MobileMusicCal/MobileMusicCal';
+import ModernMusicCal from './ModernMusicCal/ModernMusicCal';
 
-import "react-big-calendar/lib/css/react-big-calendar.css";
 import '../../App.css';
 
-const localizer = momentLocalizer(moment);
-const currentDate = new Date()
-const oneYearAgo = new Date(currentDate);
-oneYearAgo.setFullYear(currentDate.getFullYear() - 1);
-const iso8601Date = oneYearAgo.toISOString();
 
 
-class MusicCal extends Component {
+// Constants
+const GOOGLE_API_KEY = 'AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg';
+const CALENDAR_EMAIL = 'info@roxyencinitas.com';
+const MAX_RESULTS = 2500;
 
-  constructor(props, context) {
-    super(props, context)
+const getOneYearAgo = () => {
+  const currentDate = new Date();
+  const oneYearAgo = new Date(currentDate);
+  oneYearAgo.setFullYear(currentDate.getFullYear() - 1);
+  return oneYearAgo.toISOString();
+};
 
-    this.state = {
-      cal_events: [],
-      selected: false
-    }
+const convertDateToISO = (date) => {
+  return moment.utc(date).toDate().toISOString();
+};
 
-  }
+const createEventObject = (event, convertDate) => {
+  if (event.status !== "confirmed") return null;
 
-  convertDate = (date) => {
-    return moment.utc(date).toDate()
-  }
+  const baseEventData = {
+    title: event.summary,
+    description: event.description,
+    allDay: false,
+    resource: null,
+    location: event.location
+  };
 
-  componentDidMount = () => {
-    this.getEvents();
-  }
+  if (event.start.dateTime) {
+    const dateStart = convertDate(event.start.dateTime);
+    return {
+      ...baseEventData,
+      start: dateStart,
+      end: dateStart
+    };
+  } 
   
-  getEvents = async () => {
+  if (event.start.date) {
+    const dateStart = convertDate(event.start.date);
+    return {
+      ...baseEventData,
+      start: dateStart,
+      end: dateStart
+    };
+  }
+
+  console.error('Event has neither dateTime nor date:', event);
+  return null;
+};
+
+const MusicCal = () => {
+  const [calEvents, setCalEvents] = useState([]);
+  const [selectedEvent, setSelectedEvent] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+  const [isMobile, setIsMobile] = useState(false);
+
+  const convertDate = (date) => moment.utc(date).toDate();
+
+  const fetchEvents = async () => {
     try {
-      const response = await fetch(`https://www.googleapis.com/calendar/v3/calendars/info@roxyencinitas.com/events?key=AIzaSyAMcCW7mJqkNNPoAWNG7VnI3n7pjo-3bcg&maxResults=2500&timeMin=${iso8601Date}`);
-      if(response.status !== 200){
-        throw(Error(response.statusText));
-      }
-      const parsedResponse = await response.json();
-      //console.log(parsedResponse);
-
-      const eventsArray = parsedResponse.items.map((event) => {
-        //console.log(event.status);
-        if(event.status !== "confirmed"){
-          return null;
-        }
-        
-        let dateStart = event.start.dateTime ? this.convertDate(event.start.dateTime).toISOString() : console.log(event);        
-        //console.log(dateStart, 'start');
-        //let dateEnd = this.convertDate(event.end.dateTime).toISOString();
-        //console.log(dateEnd, 'end');
-
-        if (event.start.dateTime){
-          
-          return(
-            {
-              "title": event.summary,
-              "start": dateStart,
-              "end": dateStart,
-              "description" : event.description,
-              "allDay?": false,
-              "resource?": null,
-              "location": event.location
-            }
-          )
-        } else if (event.start.date){
-          let dateStart = this.convertDate(event.start.date);
-          //let dateEnd = this.convertDate(event.end.date);
-          return(
-            {
-              "title": event.summary,
-              "start": dateStart,
-              "end": dateStart,
-              "description" : event.description,
-              "allDay?": false,
-              "resource?": null
-            }
-          )
-        } else {
-          return(console.log("error"));
-        }
-      });
-
-      console.log(eventsArray);
-      this.setState({
-        cal_events: eventsArray
-      })
-
-    } catch (error){
-      console.log(error);
+      setIsLoading(true);
+      setError(null);
       
+      const timeMin = getOneYearAgo();
+      const url = `https://www.googleapis.com/calendar/v3/calendars/${CALENDAR_EMAIL}/events?key=${GOOGLE_API_KEY}&maxResults=${MAX_RESULTS}&timeMin=${timeMin}`;
+      
+      const response = await fetch(url);
+      
+      if (!response.ok) {
+        throw new Error(`Failed to fetch events: ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      
+      const eventsArray = data.items
+        .map(event => createEventObject(event, convertDate))
+        .filter(event => event !== null);
+
+      console.log('Fetched events:', eventsArray);
+      setCalEvents(eventsArray);
+    } catch (error) {
+      console.error('Error fetching calendar events:', error);
+      setError(error.message);
+    } finally {
+      setIsLoading(false);
     }
+  };
 
-  }
-
-  hideDetails = () => {
-    this.setState({
-      thisEvent: null,
-      selected: false
-    })
-  }
-
-  showEvent = (e) => {
-    //console.log(e);
-    this.setState({
-      selected: true,
-      thisEvent: e
-    });
-  }
-
-  hideEvent = () => {
-    if (this.state.selected){
-      this.setState({
-        selected: false,
-        thisEvent: null
-      })
-    }
-  }
-
-  render() {
+  useEffect(() => {
+    fetchEvents();
     
-    return (
-      <div onClick={this.hideEvent}>
-        <div className="App calendar" >
-          <header className="App-header">
+    // Check if device is mobile
+    const checkMobile = () => {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+      const isMobileDevice = /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+      const isSmallScreen = window.innerWidth <= 768;
+      setIsMobile(isMobileDevice || isSmallScreen);
+    };
 
-            <h2 className="App-title" id="musiccal">Music Calendar</h2>
-          </header>
-          <div style={{ height: 700 }}>
-            <Calendar
-              localizer={localizer}
-              events={this.state.cal_events}
-              step={30}
-              defaultView='month'
-              views={['month']}
-              defaultDate={new Date()}
-              onSelectEvent={(e) => {
-                this.showEvent(e);
-              }}
-              popup={{default: false}}
-              truncateEvents={false}
-            />
-          </div>
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
+  const handleSelectEvent = (event) => {
+    setSelectedEvent(event);
+    setModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setModalOpen(false);
+    setSelectedEvent(null);
+  };
+
+  if (error) {
+    return (
+      <div className="App calendar">
+        <header className="App-header">
+          <h2 className="App-title" id="musiccal">Music Calendar</h2>
+        </header>
+        <div style={{ padding: '20px', textAlign: 'center' }}>
+          <p>Error loading calendar: {error}</p>
+          <button onClick={fetchEvents}>Retry</button>
         </div>
-        {this.state.selected ? <MusicEvent event={this.state.thisEvent}/> : null}
       </div>
     );
   }
-}
+
+  return (
+    <div>
+      <div className="App calendar">
+        <header className="App-header">
+          <h2 className="App-title" id="musiccal">Music Calendar</h2>
+        </header>
+        {isLoading ? (
+          <div style={{ padding: '20px', textAlign: 'center' }}>
+            Loading events...
+          </div>
+        ) : isMobile ? (
+          <MobileMusicCal 
+            events={calEvents}
+            onEventSelect={handleSelectEvent}
+          />
+        ) : (
+          <ModernMusicCal 
+            events={calEvents}
+            onEventSelect={handleSelectEvent}
+            isLoading={false}
+          />
+        )}
+      </div>
+      <MusicEventModal 
+        event={selectedEvent} 
+        open={modalOpen} 
+        onClose={handleCloseModal} 
+      />
+    </div>
+  );
+};
 
 export default MusicCal;

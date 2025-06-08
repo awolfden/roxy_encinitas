@@ -1,31 +1,52 @@
-import React, {Component} from 'react';
+import React from 'react';
 import moment from 'moment';
 
-class MusicEvent extends Component {
-    
+const formatEventTime = (timeString) => {
+  const formattedTime = moment(timeString).format("h:mm A");
+  return formattedTime;
+};
 
-    render(){
-        const time = this.props.event.start.toString();
-        //console.log(time, "time")
-        console.log(this.props.event);
-        const stringTime = time.slice(0, 15);
-        let newTime = moment(time).format("hh:mm:ss a");
-        newTime = newTime[0] != 0 ? newTime.slice(0, 5) + ' ' + newTime.slice(8) : newTime.slice(1, 5) + ' ' + newTime.slice(8);
-        //console.log(newTime);
-        //console.log(stringTime);
-        
-        return(
-            <div className="flexContainer">
-                <div className="musicEventDiv">
-                    <h1>{this.props.event.title}</h1>
-                    <h1>{`${newTime}`}</h1>
-                    <h1>{this.props.event.description}</h1>
-                    {this.props.event.location ? <a href={this.props.event.location} target="_blank" >Get Tickets Here!</a> : null}
-                </div>
-            </div>
-            
-        )
-    }
-}
+const MusicEvent = ({ event, onClose }) => {
+  console.log('Event details:', event);
+  
+  const eventTime = formatEventTime(event.start);
+  const eventDate = moment(event.start).format("MMM DD, YYYY");
+
+  return (
+    <div className="flexContainer">
+      <div className="musicEventDiv">
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
+          <h1>{event.title}</h1>
+          <button 
+            onClick={onClose}
+            style={{
+              background: 'none',
+              border: 'none',
+              fontSize: '20px',
+              cursor: 'pointer',
+              padding: '5px 10px',
+              borderRadius: '4px'
+            }}
+            aria-label="Close event details"
+          >
+            ×
+          </button>
+        </div>
+        <h2>{eventDate}</h2>
+        <h2>{eventTime}</h2>
+        {event.description && <p>{event.description}</p>}
+        {event.location && (
+          <a 
+            href={event.location} 
+            target="_blank" 
+            rel="noopener noreferrer"
+          >
+            Get Tickets Here!
+          </a>
+        )}
+      </div>
+    </div>
+  );
+};
 
 export default MusicEvent;
