@@ -7,7 +7,7 @@ const LOCATIONS = [
         website: 'http://www.roxyencinitas.com',
         address1: '517 S Coast Hwy 101',
         address2: 'Encinitas, CA 92024',
-        phone: '760.230.2899',
+        phone: '760.492.ROXY (7699)',
         email: 'info@roxyencinitas.com',
         booking: 'booking@roxyencinitas.com',
         reservations: 'https://www.opentable.com/restref/client/?rid=393748&lang=en-US',
